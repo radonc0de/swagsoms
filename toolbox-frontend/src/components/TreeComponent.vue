@@ -2,17 +2,17 @@
 	<aside class="menu">
 	<p class="menu-label">Toolboxes</p>
 	<ul class="menu-list">
-		<li v-for="toolbox in toolboxes">
+		<li v-for="toolbox in toolboxes" v-bind:key="toolbox.id">
 			<a>
 				{{  toolbox.address }}
 			</a>
 			<ul v-if="toolbox.slots.length">
-				<li v-for="slot in toolbox.slots">
+				<li v-for="slot in toolbox.slots" v-bind:key="slot.id">
 					<a>
 						{{slot.address }} {{ slot.tags}}
 					</a>
 					<ul v-if="slot.slots.length">
-						<li v-for="subslot in slot.slots">
+						<li v-for="subslot in slot.slots" v-bind:key="subslot.id">
 							<a>
 								{{subslot.address }} {{ subslot.tags}}
 							</a>
@@ -27,9 +27,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
-import Slot from '../slot'
-import Toolbox from '../toolbox'
+import { defineComponent, type PropType } from 'vue';
+import type Slot from '../slot'
+import type Toolbox from '../toolbox'
 
 export default defineComponent({
   name: 'TreeComponent',

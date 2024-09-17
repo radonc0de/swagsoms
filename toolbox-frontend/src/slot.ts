@@ -2,5 +2,6 @@ export default interface Slot {
 	id: string,
 	address: string,
 	tags: string[],
-	slots: Slot[]
+	slots: Slot[],
+	isHovered: boolean
 }

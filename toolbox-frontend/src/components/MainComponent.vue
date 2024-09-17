@@ -1,8 +1,8 @@
 <script lang="ts">
 import SearchComponent from './SearchComponent.vue'
 import TreeComponent from './TreeComponent.vue'
-import Slot from '../slot'
-import Toolbox from '../toolbox'
+import type Slot from '../slot'
+import type Toolbox from '../toolbox'
 import { defineComponent } from 'vue';
 
 
@@ -44,7 +44,7 @@ export default defineComponent({
 	<section class="section">
 		<div class="container is-fullhd">
 			<div class="notification is-warning">
-				<SearchComponent />
+				<SearchComponent :toolboxes="data"/>
 			</div>
 		</div>
 	</section>
